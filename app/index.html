@@ -1,0 +1,295 @@
+<!-- 
+Listy
+- Think Less, List More!
+v 1.0.4
+Last Updated : 20/9/2025
+by Md. Muhibbur Rahman 
+email : muhib2929@gmail.com 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listy</title>
+  <!-- <link rel="stylesheet" href="mobile.css" type="text/css" media="all" /> -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header>
+    <h3>Listy</h3>
+     <!-- <img src="favicon.png" alt="logo"> -->
+    <a id="menuBtn"></a>
+  </header>
+  
+  <section id="tabSection">
+    <!-- MORE ITEMS HERE -->
+
+    <button id="addList" style="order:1"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+    
+    <!-- ADD LIST POPUP -->
+    <div id="addPopup"> 
+      <button id="closeList" type="submit"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg></button>
+      <p>List Name</p>
+      <input type="text" id="categoryNameInputBox" value="" />
+      <button id="addNewList" type="submit"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+    </div>
+  </section>
+
+
+  <section class="list-section" id="listSection">
+    <div class="title-wrap" id="stickyTitle">
+      <input type="text" id="title" value="" readonly/>
+      
+      <button type="submit" id="clearList" class="hide">Clear</button>
+      
+      <button type="submit" id="shareList" class="hide">Share</button>
+      
+      <select id="themeSelector" class="hide">
+        <option value="settings">Settings Default</option>
+        <option value="Light">Light Mode</option>
+        <option value="Dark">Obsidian Dark </option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Cozy Green</option>
+        <option value="Red">Rose Red</option>
+        <option value="Orange">Creamy Orange</option>
+        <option value="Lavender">Lavender</option>
+      </select>
+    </div>
+
+    <div>
+      <ul class="list-ul">
+        <!-- <div class="item">
+          <input type="checkbox" class="tick" data-index="${i}" />
+          <input type="text" class="categoryName" data-index="${i}" value="${item}" readonly/>
+          <button class="removeItem" data-index="${i}"><svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Close_MD"> <path id="Vector" d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg></button>
+        </div> -->
+        
+        <!-- <input type="text" data-index="" class="categoryName" value="" readonly/> -->
+        <!-- <div class="defaultMsg">
+          <p>Listy</p>
+          <p>Think Less, List More!</p>
+          <p>Select a List to Continue</p>
+        </div> -->
+
+        <div style="margin-top: 40px; opacity: 40%; width: 100%;">
+          <p style="text-align: center;">Think Less, List More!</p>
+        </div>
+      </ul>
+    </div>
+  </section>
+  
+  <footer id="addSection">
+    <form action="" id="itemForm">
+      <input type="text" id="inputBox" value="" placeholder="Add Item..." / autofocus>
+      <button type="submit">
+        <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      </button>
+    </form>
+  </footer>
+  
+  <!-- <div id="toast" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 20px; border-radius: 5px; opacity: 0; transition: opacity 0.5s;"> -->
+</div>
+
+
+<!-- SETTINGS - SPA -->
+  <section class="list-section" id="settings">
+    <form accept-charset="utf-8">
+      <div class="option">
+        <label for="">Select Theme</label>
+        <select id="themeSelectorSettings">
+          <option selected value="Light">Light Mode</option>
+          <option value="Dark">Obsidian Dark </option>
+          <option value="Blue">Sky Blue</option>
+          <option value="Green">Cozy Green</option>
+          <option value="Red">Rose Red</option>
+          <option value="Orange">Creamy Orange</option>
+          <option value="Lavender">Lavender</option>
+        </select>
+      </div>
+      
+      <div class="option">
+        <label for="">Font Size</label>
+        <!-- <input style="width:32px;" id="fontinput" type="number" value="" />
+        <p>px</p> -->
+        <div>
+          <label>
+            <input type="radio" name="fontSize" value="14" />
+            <span>Small</span>
+          </label>
+          <label>
+            <input type="radio" name="fontSize" value="16"/>
+            <span>Medium</span>
+          </label>
+          <label>
+            <input type="radio" name="fontSize" value="18" />
+            <span>Large</span>
+          </label>
+        </div>
+      </div>
+      
+      <input class="hide" type="file" id="importFile" />
+      <div class="wrapper">
+        <button id="importBtn">Import Notes</button>
+
+        <button  id="exportBtn">Export Notes</button>
+      </div>
+
+      <div class="exportContainer">
+        <p>Select Note</p>
+        <select name="" id="selectListToExport">
+
+        </select>
+        <button id="exportSelectedBtn">Export</button>
+      </div>
+
+      <div class="wrapper">
+        <a id="tutorial">How to Use</a>
+        <a id="shareApp">Share App</a>
+      </div>
+      <a id="refreshApp">Refresh App</a>
+      <a id="resetApp">Clear All Data</a>
+
+    </form>
+    <div id="exportListContainer" class="hide">
+      <!-- <a ></a> -->
+      <p>Select A List to export</p>
+    </div>
+<!-- 
+    <select id="exportListSelect">
+      <option value="">-- Select a list to export --</option>
+    </select>
+    <button id="exportBtn">Export Selected List</button> -->
+    
+    <div class="branding" style="margin-top: 40px;">
+      <img src="favicon.png" alt="logo">
+      <div>
+        
+        <div>
+          <h3>Listy</h3>
+          <p>v 1.0.4</p>
+        </div>
+        
+        <p>Think Less, List More!</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- HOW TO USE - SPA -->
+  <section id="tutorialSection">
+    
+    <div class="branding">
+      <img src="favicon.png" alt="logo">
+      <div>
+        <h3>Listy</h3>
+        <p>Think Less, List More!</p>
+      </div>
+    </div>
+
+    <div class="btnContainer">
+      <h3 id="getStarted">🚀 Get Started</h3>
+      <h3 id="howToUse">📖 Tutorial</h3>
+      <h3 id="settingsBtn">⚙️ Settings</h3>
+    </div>
+
+    <div class="container" id="howToUseContainer">
+      <h2>How to Use</h2>
+      <div class="content-para">
+
+        <div class="slide">
+          <h1>List</h1>
+          <p>></p>
+        </div>
+
+        <div class="contents">
+          <h3>Create a List</h3>
+          <ol>
+            <li>Click on the "+" button from tab.</li>
+            <li>Give your list a name and click "+".</li>
+            <li>Start adding items to your list.</li>
+          </ol>
+  
+  
+          <h3>Manage List</h3>
+          <ol>
+            <li>Select a List</li>
+            <li>Double Click to its title</li>
+            <li>Rename and click anywhere to save changes</li>
+          </ol>
+  
+          <h3>Add Custom Color</h3>
+          <ol>
+            <li>Select A list</li>
+            <li>Click on the dropdown beside share button</li>
+            <li>Select a color to make it your list color</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <div class="content-para">
+        <div class="slide">
+          <h1>Items</h1>
+          <p>></p>
+        </div>
+
+        <div class="contents">
+
+          <h3>Add Items</h3>
+          <ol>
+            <li>Select a List from the tab</li>
+            <li>Write Item name on the input at the bottom</li>
+            <li>Click + to add the item on the selected list</li>
+          </ol>
+  
+          <h3>Edit Items</h3>
+          <ol>
+            <li>Double Click to a item</li>
+            <li>Change the item name</li>
+            <li>Click anywhere to save the changes</li>
+          </ol>
+  
+          <h3>Tick Item</h3>
+          <ol>
+            <li>Click on the left side of the item</li>
+            <li>Or, Click on item and click on the left button</li>
+            <li>To untick, click again</li>
+          </ol>
+  
+          <h3>Delete Item</h3>
+          <ol>
+            <li>Click on the right side of an item</li>
+            <li>Or, Click on item and click on the right "X" button</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="content-para">
+        <div class="slide">
+          <h1>Settings</h1>
+          <p>></p>
+        </div>
+
+        <div class="contents">
+          <p><b>Share List</b> : Select List, double click to title, click on the share button to copy the list to the clipboard</p>
+          <p><b>Import List</b> : Open Settings, Select List, Click on Import to download as .json</p>
+          <p><b>Export List</b> : Open Settings, Click on Export List, select .json file to export a saved list</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+</body>
+<script src="jquery.js"></script>
+
+<script src="script.js"></script>
+
+</html>

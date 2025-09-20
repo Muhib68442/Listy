@@ -1,0 +1,228 @@
+// MAIN CSS 
+
+
+// VARIABLES 
+$text : #000;
+$bg : #d5d5d5;
+
+
+
+// DEFAULT 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wgt@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color : $text;
+    scroll-behavior: smooth ;
+}
+
+
+
+// body{
+//     background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+
+// }
+
+body {
+  background: linear-gradient(-45deg, #87bbf6, #507fa7, #3661a7, #2232a9);
+  background-size: 400% 400%;
+  animation: gradientBG 5s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+
+#hero{
+    width: 100%;
+    height: 100vh;
+
+    .branding{
+        position : absolute;
+        top : 50%;
+        left : 0%;
+        transform: translateY(-50%);
+
+        display: flex;
+        flex-direction: column;
+        gap : 20px;
+        align-items: flex-start;
+        justify-content: center;
+        padding-left: 50px;
+
+        h3{
+            font-size : 42px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 26px;
+            font-weight: 400;
+        }
+        div{
+            display: flex;
+            gap: 10px;
+            a{
+                padding: 6px 20px;
+                background-color: #000;
+                color: #fff;
+                border-radius: 50px;
+                text-decoration: none;
+                border : 2px solid transparent;
+                transition : 0.1s;
+                &:hover{
+                    background-color: transparent;
+                    transition : 0.1s;
+                    border : 2px solid #000;
+                    color: #000;
+                }
+            }
+            a:nth-child(2){
+                background-color: transparent;
+                border : 2px solid #000;
+                color: #000;
+                transition : 0.1s;
+                &:hover{
+                    background-color: #000;
+                    transition : 0.1s;
+                    border : 2px solid transparent;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#explore{
+    width: 90%;
+    margin : 0 auto;
+    height: 100vh;
+    // background-color: #fff;
+
+    .text-section{
+
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            margin : 10px 0;
+        }
+        ul{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            list-style: none;
+            li{
+                font-size: 16px;
+                font-weight: 400;
+
+                span{
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: #272727;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        a{
+            // text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+
+        }
+
+    }
+}
+
+hr{
+    margin : 20px 0;
+    border : none;
+    border-top: 1px solid #000;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    p{
+        font-size: 24px;
+        font-weight: 400;
+    }
+}
+.downloadBtn{
+    padding: 6px 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    border : 2px solid transparent;
+    transition : 0.1s;
+    &:hover{
+        background-color: transparent;
+        transition : 0.1s;
+        border : 2px solid #000;
+        color: #000;
+    }
+}
+
+@media (min-width: 768px) {
+    #explore{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > *:first-child {
+            width: 50%;
+        }
+        
+        > *:last-child {
+            padding-left: 50px;
+            border-left: 3px solid #000;
+        }
+    }
+
+    .branding{
+        h3{
+            font-size : 52px !important;
+            font-weight: 600;
+        }
+        p{
+            font-size: 32px !important;
+            font-weight: 400;
+        }
+        a{
+            padding: 12px 26px;
+            font-size: 20px !important;
+            
+        }
+        padding-left: 100px !important;
+    }
+
+    .text-section{
+        h3{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 20px !important;
+            font-weight: 400;
+        }
+        ul li{
+            font-size: 20px !important;
+            font-weight: 400;
+        }
+
+    }
+
+
+}
