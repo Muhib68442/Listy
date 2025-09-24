@@ -75,10 +75,12 @@
 <script>
     // EXPORT LIST
     (function(){
+    console.log("Export List Triggered");
     const params = new URLSearchParams(window.location.search);
     const data = params.get("data");
 
     if(data){
+        console.log("Data Found");
         document.body.innerHTML = ""; 
         try {
             const decrypted = atob(data); // decrypt base64
