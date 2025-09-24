@@ -123,13 +123,16 @@ hr {
 
 .wrapper {
   display: flex;
-  align-items: center;
+  align-items: center !important;
   justify-content: center;
   gap: 10px;
 }
 .wrapper p {
   font-size: 24px;
   font-weight: 400;
+}
+.wrapper a {
+  margin: 0 !important;
 }
 
 .downloadBtn {
