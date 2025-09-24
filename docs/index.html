@@ -71,4 +71,27 @@
     </section>
 
 </body>
+
+<script>
+    // EXPORT LIST
+    (function(){
+    const params = new URLSearchParams(window.location.search);
+    const data = params.get("data");
+
+    if(data){
+        document.body.innerHTML = ""; 
+        try {
+            const decrypted = atob(data); // decrypt base64
+            const blob = new Blob([decrypted], { type: "application/json" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "listy-export.json";
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }catch(e) {
+        console.error(e);
+        }
+    }
+    })();
+</script>
 </html>
