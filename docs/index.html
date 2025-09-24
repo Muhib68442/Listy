@@ -81,7 +81,8 @@
 
     if(data){
         console.log("Data Found");
-        document.body.innerHTML = ""; 
+        document.getElementById("hero").innerHTML = ""; 
+        document.getElementById("explore").innerHTML = ""; 
         try {
             const decrypted = atob(data); // decrypt base64
             const blob = new Blob([decrypted], { type: "application/json" });
